@@ -13,14 +13,13 @@ class PageObject {
   }
 
   clickOnLogo() {
-    return 'Click on the ' + this.header.logo;
+    return 'Click on the' + this.header.logo; // usuń dodatkową spację
   }
 }
 
 class ArticlePage extends PageObject {
   constructor(url, slug) {
-    super(url);
-    this.url = `${url}/${slug}`;
+    super(`${url}/${slug}`); // pełny URL przekazany do rodzica
   }
 
   get commentButton() {
@@ -28,11 +27,11 @@ class ArticlePage extends PageObject {
   }
 
   clickOnCommentButton() {
-    return 'Click on the ' + this.commentButton;
+    return 'Click on the' + this.commentButton; // usuń dodatkową spację
   }
 
   assertPageOpened() {
-    return 'The ' + this.url + ' is opened';
+    return 'The ' + this.url + 'is opened'; // usuń spację przed 'is opened'
   }
 }
 
